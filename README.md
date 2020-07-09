@@ -1,2 +1,6 @@
-# blogging
-This repo to be used for scripts and files referred to in Pythian Blogs
+
+# ASM Capacity Planning
+
+Here is where the scripts will be for ASM Capacity Planning
+
+
