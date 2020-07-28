@@ -1,6 +1,20 @@
 -- May 2020
 -- Jure Bratina, Pythian
 --
+--
+-- DISCLAIMER
+-- 
+-- This script was prepared by the author in a personal capacity and does not constitute technical advice 
+-- or recommendation from Pythian. Content in this script is provided AS-IS, without representations or 
+-- warranties of any kind and Pythian expressly disclaims all warranties, including express, statutory or 
+-- implied warranties of non-infringement, merchantability,  and fitness for a particular purpose. 
+-- Pythian does not make any warranty regarding the accuracy, adequacy, validity, reliability, availability, 
+-- or completeness of the Content provided in this script. You understand that the Content may contain 
+-- defects or errors. Your access to and use of the Content in this script is at your own risk. Pythian 
+-- will not accept any liability arising out of your access to or use of the Content provided in this script. 
+--
+--
+--
 -- Purpose: Retrieve OS and DB related metrics from the AWR repository for a given time range. 
 --          Inspired by the AWR repository analysis scripts from Chapter 5 (Sizing Exadata) in the "Oracle 
 --          Exadata Recipes: A Problem-Solution Approach" book, and John Beresniewicz's AWR1page project: 
@@ -31,7 +45,6 @@
 -- 
 -- Enter begin time for report [DD-MON-YYYY HH24:MI] - default "30-APR-2020 10:54" : /* specify time period to analyze */
 -- Enter end time for report [DD-MON-YYYY HH24:MI] - default "30-APR-2020 22:54" : 
- 
 
 
 set lines 1500 pages 9999 tab off
