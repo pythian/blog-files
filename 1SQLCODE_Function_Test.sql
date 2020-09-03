@@ -31,45 +31,44 @@ CREATE OR REPLACE PROCEDURE delete_order
 IS
 vtest2292 int := 0;
 BEGIN
-delete from orders where order_id = order_id_in;
-commit;
+  delete from orders where order_id = order_id_in;
+  commit;
 
--- if the delete instruction runs fine the tcount table is truncated
-EXECUTE IMMEDIATE ('truncate table tcount');
+  -- if the delete instruction runs fine the tcount table is truncated
+  EXECUTE IMMEDIATE ('truncate table tcount');
 
 EXCEPTION
-WHEN OTHERS THEN
-DECLARE
-error_code NUMBER := SQLCODE;
-BEGIN
-IF error_code = -2292 THEN
-null;
-DBMS_OUTPUT.PUT_LINE('ERROR 2292!!!!!!!!!!!!!'); -- error found
-insert into tcount values (1);
-commit;
+  WHEN OTHERS THEN
+  DECLARE
+  error_code NUMBER := SQLCODE;
+  BEGIN
+    IF error_code = -2292 THEN
+      DBMS_OUTPUT.PUT_LINE('ERROR 2292!!!!!!!!!!!!!'); -- error found
+      insert into tcount values (1);
+      commit;
 
-select count(1) into vtest2292 from tcount;
+      select count(1) into vtest2292 from tcount;
 
-IF vtest2292 >= 2 then
-DBMS_OUTPUT.PUT_LINE('ERROR 2292 >x2!!!!!!!!!!!!!!'); -- two or more consecutive errors found
-raise_application_error (-20001,'Two or more ORA-2292 were occurred deleting an order.');
-END IF;
-ELSE
-raise_application_error (-20002,'An ERROR has occurred deleting an order.');
-END IF;
-END;
+      IF vtest2292 >= 2 then
+      DBMS_OUTPUT.PUT_LINE('ERROR 2292 >x2!!!!!!!!!!!!!!'); -- two or more consecutive errors found
+      raise_application_error (-20001,'Two or more ORA-2292 were occurred deleting an order.');
+      END IF;
+    ELSE
+      raise_application_error (-20002,'An ERROR has occurred deleting an order.');
+    END IF;
+  END;
 END;
 /
 
 --Job to run the procedure delete_order and confirm that just after the second consecutive execution the error will be written in alert log
 BEGIN
-DBMS_SCHEDULER.create_job (
-job_name => 'job_delete_order',
-job_type => 'PLSQL_BLOCK',
-job_action => 'begin delete_order(1); end;',
-start_date => SYSTIMESTAMP,
-repeat_interval => 'FREQ=HOURLY;BYMINUTE=0; interval=1;',
-enabled => TRUE);
+  DBMS_SCHEDULER.create_job (
+  job_name => 'job_delete_order',
+  job_type => 'PLSQL_BLOCK',
+  job_action => 'begin delete_order(1); end;',
+  start_date => SYSTIMESTAMP,
+  repeat_interval => 'FREQ=HOURLY;BYMINUTE=0; interval=1;',
+  enabled => TRUE);
 END;
 /
 
@@ -79,4 +78,4 @@ select count(1) from tcount;
 exec dbms_scheduler.run_job('job_delete_order',FALSE);
 select count(1) from tcount;
 
-tail -f alert_database_name.log
+tail -f alert_<database_name>.log
