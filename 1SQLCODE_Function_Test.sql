@@ -50,8 +50,8 @@ EXCEPTION
       select count(1) into vtest2292 from tcount;
 
       IF vtest2292 >= 2 then
-      DBMS_OUTPUT.PUT_LINE('ERROR 2292 >x2!!!!!!!!!!!!!!'); -- two or more consecutive errors found
-      raise_application_error (-20001,'Two or more ORA-2292 were occurred deleting an order.');
+        DBMS_OUTPUT.PUT_LINE('ERROR 2292 >x2!!!!!!!!!!!!!!'); -- two or more consecutive errors found
+        raise_application_error (-20001,'Two or more ORA-2292 were occurred deleting an order.');
       END IF;
     ELSE
       raise_application_error (-20002,'An ERROR has occurred deleting an order.');
