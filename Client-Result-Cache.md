@@ -308,7 +308,7 @@ In this case, that parameter, or something like it, is not available.
 
 The following questions are raised by this result:  
 
-* Are those 1 row packets being sent because application has submitted a SQL query that is expected to return only 1 row?
+* Are those 1 row packets being sent because the application has submitted a SQL query that is expected to return only 1 row?
 * Or is the app configured to retrieve one row at a time, regardless of the number of rows that may be returned?
 
 The fact that some FETCH calls return 200 rows suggests that there may be many queries that simply return 0 or 1 row.
