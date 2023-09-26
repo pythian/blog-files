@@ -1,0 +1,511 @@
+1851240 1695683451.452481 execve("./usleep-test.pl", ["./usleep-test.pl"], 0x7ffdf2882048 /* 80 vars */) = 0 <0.000126>
+1851240 1695683451.452711 brk(NULL)     = 0x55a7326e6000 <0.000003>
+1851240 1695683451.452783 arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe6c296390) = -1 EINVAL (Invalid argument) <0.000003>
+1851240 1695683451.452819 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6bb8d16000 <0.000005>
+1851240 1695683451.452842 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory) <0.000007>
+1851240 1695683451.452870 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000008>
+1851240 1695683451.452894 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2", 0x7ffe6c2955b0, 0) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.452915 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.452931 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/x86_64", 0x7ffe6c2955b0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.452947 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.452963 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64", 0x7ffe6c2955b0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+1851240 1695683451.452984 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.453000 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64", 0x7ffe6c2955b0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.453017 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.453037 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls", 0x7ffe6c2955b0, 0) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.453052 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.453069 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/x86_64", 0x7ffe6c2955b0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.453084 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.453101 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64", 0x7ffe6c2955b0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.453116 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.453133 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64", 0x7ffe6c2955b0, 0) = -1 ENOENT (No such file or directory) <0.000006>
+1851240 1695683451.453156 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000007>
+1851240 1695683451.453176 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832 <0.000005>
+1851240 1695683451.453193 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784 <0.000005>
+1851240 1695683451.453215 pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48 <0.000005>
+1851240 1695683451.453238 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68 <0.000005>
+1851240 1695683451.453260 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0 <0.000005>
+1851240 1695683451.453291 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784 <0.000005>
+1851240 1695683451.453316 mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6bb8aee000 <0.000010>
+1851240 1695683451.453343 mmap(0x7f6bb8b16000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f6bb8b16000 <0.000015>
+1851240 1695683451.453382 mmap(0x7f6bb8cab000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f6bb8cab000 <0.000010>
+1851240 1695683451.453408 mmap(0x7f6bb8d03000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f6bb8d03000 <0.000009>
+1851240 1695683451.453434 mmap(0x7f6bb8d09000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6bb8d09000 <0.000005>
+1851240 1695683451.453461 close(3)      = 0 <0.000003>
+1851240 1695683451.453483 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6bb8aeb000 <0.000004>
+1851240 1695683451.453501 arch_prctl(ARCH_SET_FS, 0x7f6bb8aeb740) = 0 <0.000003>
+1851240 1695683451.453515 set_tid_address(0x7f6bb8aeba10) = 1851240 <0.000003>
+1851240 1695683451.453528 set_robust_list(0x7f6bb8aeba20, 24) = 0 <0.000003>
+1851240 1695683451.453541 rseq(0x7f6bb8aec0e0, 0x20, 0, 0x53053053) = 0 <0.000003>
+1851240 1695683451.453592 mprotect(0x7f6bb8d03000, 16384, PROT_READ) = 0 <0.000009>
+1851240 1695683451.453629 mprotect(0x55a731720000, 4096, PROT_READ) = 0 <0.000006>
+1851240 1695683451.453649 mprotect(0x7f6bb8d50000, 8192, PROT_READ) = 0 <0.000008>
+1851240 1695683451.453676 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000003>
+1851240 1695683451.453733 getrandom("\x7b\x7e\x1b\x56\x9f\xdd\x1b\x3a", 8, GRND_NONBLOCK) = 8 <0.000004>
+1851240 1695683451.453757 brk(NULL)     = 0x55a7326e6000 <0.000003>
+1851240 1695683451.453771 brk(0x55a732707000) = 0x55a732707000 <0.000004>
+1851240 1695683451.453789 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3 <0.000007>
+1851240 1695683451.453810 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=5712208, ...}, AT_EMPTY_PATH) = 0 <0.000004>
+1851240 1695683451.453828 mmap(NULL, 5712208, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6bb8578000 <0.000006>
+1851240 1695683451.453849 close(3)      = 0 <0.000003>
+1851240 1695683451.453883 execve("/opt/oracle/instantclient_19_16/perl", ["perl", "./usleep-test.pl"], 0x7ffe6c296578 /* 80 vars */) = -1 ENOENT (No such file or directory) <0.000027>
+1851240 1695683451.453928 execve("/home/jkstill/miniconda3/envs/oci/bin/perl", ["perl", "./usleep-test.pl"], 0x7ffe6c296578 /* 80 vars */) = -1 ENOENT (No such file or directory) <0.000021>
+1851240 1695683451.453965 execve("/home/jkstill/miniconda3/condabin/perl", ["perl", "./usleep-test.pl"], 0x7ffe6c296578 /* 80 vars */) = -1 ENOENT (No such file or directory) <0.000019>
+1851240 1695683451.454006 execve("/home/jkstill/bin/perl", ["perl", "./usleep-test.pl"], 0x7ffe6c296578 /* 80 vars */) = -1 ENOENT (No such file or directory) <0.000019>
+1851240 1695683451.454044 execve("/home/jkstill/perl5/bin/perl", ["perl", "./usleep-test.pl"], 0x7ffe6c296578 /* 80 vars */) = -1 ENOENT (No such file or directory) <0.000016>
+1851240 1695683451.454076 execve("/home/jkstill/.nvm/versions/node/v16.19.1/bin/perl", ["perl", "./usleep-test.pl"], 0x7ffe6c296578 /* 80 vars */) = -1 ENOENT (No such file or directory) <0.000019>
+1851240 1695683451.454111 execve("/opt/perlbrew/perl5/perlbrew/bin/perl", ["perl", "./usleep-test.pl"], 0x7ffe6c296578 /* 80 vars */) = -1 ENOENT (No such file or directory) <0.000021>
+1851240 1695683451.454171 execve("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/bin/perl", ["perl", "./usleep-test.pl"], 0x7ffe6c296578 /* 80 vars */) = 0 <0.000106>
+1851240 1695683451.454315 brk(NULL)     = 0x197c000 <0.000003>
+1851240 1695683451.454376 arch_prctl(0x3001 /* ARCH_??? */, 0x7ffee46f65d0) = -1 EINVAL (Invalid argument) <0.000003>
+1851240 1695683451.454402 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcf16cba000 <0.000004>
+1851240 1695683451.454426 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory) <0.000006>
+1851240 1695683451.454452 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000006>
+1851240 1695683451.454475 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2", 0x7ffee46f57f0, 0) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.454492 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.454508 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/x86_64", 0x7ffee46f57f0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.454523 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.454539 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64", 0x7ffee46f57f0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.454554 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.454569 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64", 0x7ffee46f57f0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.454584 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.454600 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls", 0x7ffee46f57f0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.454617 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.454637 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/x86_64", 0x7ffee46f57f0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.454652 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.454668 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64", 0x7ffee46f57f0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.454684 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.454700 newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64", 0x7ffee46f57f0, 0) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.454715 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3 <0.000006>
+1851240 1695683451.454735 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832 <0.000005>
+1851240 1695683451.454758 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=21448, ...}, AT_EMPTY_PATH) = 0 <0.000004>
+1851240 1695683451.454780 mmap(NULL, 16424, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcf16cb5000 <0.000007>
+1851240 1695683451.454798 mmap(0x7fcf16cb6000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fcf16cb6000 <0.000009>
+1851240 1695683451.454818 mmap(0x7fcf16cb7000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcf16cb7000 <0.000005>
+1851240 1695683451.454834 mmap(0x7fcf16cb8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcf16cb8000 <0.000005>
+1851240 1695683451.454858 close(3)      = 0 <0.000003>
+1851240 1695683451.454874 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3 <0.000007>
+1851240 1695683451.454894 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832 <0.000004>
+1851240 1695683451.454909 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=14432, ...}, AT_EMPTY_PATH) = 0 <0.000003>
+1851240 1695683451.454927 mmap(NULL, 16424, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcf16cb0000 <0.000005>
+1851240 1695683451.454943 mmap(0x7fcf16cb1000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7fcf16cb1000 <0.000007>
+1851240 1695683451.454961 mmap(0x7fcf16cb2000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcf16cb2000 <0.000011>
+1851240 1695683451.454987 mmap(0x7fcf16cb3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcf16cb3000 <0.000005>
+1851240 1695683451.455011 close(3)      = 0 <0.000003>
+1851240 1695683451.455026 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000006>
+1851240 1695683451.455046 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832 <0.000004>
+1851240 1695683451.455062 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=940560, ...}, AT_EMPTY_PATH) = 0 <0.000003>
+1851240 1695683451.455080 mmap(NULL, 942344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcf16bc9000 <0.000005>
+1851240 1695683451.455097 mmap(0x7fcf16bd7000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7fcf16bd7000 <0.000008>
+1851240 1695683451.455115 mmap(0x7fcf16c53000, 372736, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8a000) = 0x7fcf16c53000 <0.000007>
+1851240 1695683451.455136 mmap(0x7fcf16cae000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe4000) = 0x7fcf16cae000 <0.000008>
+1851240 1695683451.455171 close(3)      = 0 <0.000003>
+1851240 1695683451.455187 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcrypt.so.1", O_RDONLY|O_CLOEXEC) = 3 <0.000007>
+1851240 1695683451.455207 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@ \0\0\0\0\0\0"..., 832) = 832 <0.000004>
+1851240 1695683451.455223 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=198664, ...}, AT_EMPTY_PATH) = 0 <0.000003>
+1851240 1695683451.455240 mmap(NULL, 233888, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcf16b8f000 <0.000006>
+1851240 1695683451.455257 mprotect(0x7fcf16b91000, 188416, PROT_NONE) = 0 <0.000009>
+1851240 1695683451.455277 mmap(0x7fcf16b91000, 81920, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fcf16b91000 <0.000007>
+1851240 1695683451.455295 mmap(0x7fcf16ba5000, 102400, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7fcf16ba5000 <0.000005>
+1851240 1695683451.455310 mmap(0x7fcf16bbf000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2f000) = 0x7fcf16bbf000 <0.000005>
+1851240 1695683451.455328 mmap(0x7fcf16bc1000, 29088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fcf16bc1000 <0.000004>
+1851240 1695683451.455350 close(3)      = 0 <0.000003>
+1851240 1695683451.455365 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000006>
+1851240 1695683451.455384 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832 <0.000003>
+1851240 1695683451.455399 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784 <0.000003>
+1851240 1695683451.455414 pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48 <0.000003>
+1851240 1695683451.455428 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68 <0.000003>
+1851240 1695683451.455443 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0 <0.000003>
+1851240 1695683451.455460 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784 <0.000003>
+1851240 1695683451.455475 mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcf16967000 <0.000005>
+1851240 1695683451.455491 mmap(0x7fcf1698f000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fcf1698f000 <0.000008>
+1851240 1695683451.455510 mmap(0x7fcf16b24000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fcf16b24000 <0.000006>
+1851240 1695683451.455528 mmap(0x7fcf16b7c000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fcf16b7c000 <0.000006>
+1851240 1695683451.455550 mmap(0x7fcf16b82000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fcf16b82000 <0.000005>
+1851240 1695683451.455573 close(3)      = 0 <0.000003>
+1851240 1695683451.455598 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcf16965000 <0.000004>
+1851240 1695683451.455618 arch_prctl(ARCH_SET_FS, 0x7fcf16966380) = 0 <0.000003>
+1851240 1695683451.455632 set_tid_address(0x7fcf16966650) = 1851240 <0.000003>
+1851240 1695683451.455645 set_robust_list(0x7fcf16966660, 24) = 0 <0.000003>
+1851240 1695683451.455658 rseq(0x7fcf16966d20, 0x20, 0, 0x53053053) = 0 <0.000004>
+1851240 1695683451.455711 mprotect(0x7fcf16b7c000, 16384, PROT_READ) = 0 <0.000009>
+1851240 1695683451.455739 mprotect(0x7fcf16bbf000, 4096, PROT_READ) = 0 <0.000007>
+1851240 1695683451.455774 mprotect(0x7fcf16cae000, 4096, PROT_READ) = 0 <0.000009>
+1851240 1695683451.455798 mprotect(0x7fcf16cb3000, 4096, PROT_READ) = 0 <0.000006>
+1851240 1695683451.455816 mprotect(0x7fcf16cb8000, 4096, PROT_READ) = 0 <0.000006>
+1851240 1695683451.455839 mprotect(0x7bb000, 4096, PROT_READ) = 0 <0.000005>
+1851240 1695683451.455859 mprotect(0x7fcf16cf4000, 8192, PROT_READ) = 0 <0.000007>
+1851240 1695683451.455886 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000003>
+1851240 1695683451.455927 rt_sigaction(SIGFPE, {sa_handler=SIG_IGN, sa_mask=[FPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fcf169a9520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000004>
+1851240 1695683451.455949 getrandom("\x6c\x54\xfd\x60\xf5\x4e\xc6\x06", 8, GRND_NONBLOCK) = 8 <0.000004>
+1851240 1695683451.455966 brk(NULL)     = 0x197c000 <0.000003>
+1851240 1695683451.455985 brk(0x199d000) = 0x199d000 <0.000004>
+1851240 1695683451.456046 getuid()      = 1000 <0.000005>
+1851240 1695683451.456067 geteuid()     = 1000 <0.000003>
+1851240 1695683451.456082 getgid()      = 1002 <0.000003>
+1851240 1695683451.456095 getegid()     = 1002 <0.000003>
+1851240 1695683451.456128 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3 <0.000009>
+1851240 1695683451.456157 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=5712208, ...}, AT_EMPTY_PATH) = 0 <0.000004>
+1851240 1695683451.456177 mmap(NULL, 5712208, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fcf163f2000 <0.000005>
+1851240 1695683451.456195 close(3)      = 0 <0.000003>
+1851240 1695683451.456236 openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 3 <0.000008>
+1851240 1695683451.456258 read(3, "9 M\303", 4) = 4 <0.000004>
+1851240 1695683451.456275 close(3)      = 0 <0.000004>
+1851240 1695683451.456345 readlink("/proc/self/exe", "/opt/perlbrew/perl5/perlbrew/per"..., 4095) = 55 <0.000018>
+1851240 1695683451.456729 getuid()      = 1000 <0.000003>
+1851240 1695683451.456744 geteuid()     = 1000 <0.000003>
+1851240 1695683451.456759 getgid()      = 1002 <0.000005>
+1851240 1695683451.456777 getegid()     = 1002 <0.000004>
+1851240 1695683451.456804 ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0 <0.000007>
+1851240 1695683451.456832 lseek(0, 0, SEEK_CUR) = -1 ESPIPE (Illegal seek) <0.000085>
+1851240 1695683451.456935 ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0 <0.000004>
+1851240 1695683451.456954 lseek(1, 0, SEEK_CUR) = -1 ESPIPE (Illegal seek) <0.000003>
+1851240 1695683451.456968 ioctl(2, TCGETS, {B38400 opost isig icanon echo ...}) = 0 <0.000004>
+1851240 1695683451.457007 lseek(2, 0, SEEK_CUR) = -1 ESPIPE (Illegal seek) <0.000003>
+1851240 1695683451.457022 openat(AT_FDCWD, "./usleep-test.pl", O_RDONLY) = 3 <0.000007>
+1851240 1695683451.457043 ioctl(3, TCGETS, 0x7ffee46f6170) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.457057 lseek(3, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.457072 fcntl(3, F_SETFD, FD_CLOEXEC) = 0 <0.000003>
+1851240 1695683451.457087 fstat(3, {st_mode=S_IFREG|0764, st_size=1061, ...}) = 0 <0.000003>
+1851240 1695683451.457103 getuid()      = 1000 <0.000003>
+1851240 1695683451.457116 geteuid()     = 1000 <0.000003>
+1851240 1695683451.457132 getgid()      = 1002 <0.000004>
+1851240 1695683451.457151 getegid()     = 1002 <0.000004>
+1851240 1695683451.457169 rt_sigaction(SIGCHLD, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000005>
+1851240 1695683451.457288 brk(0x19be000) = 0x19be000 <0.000005>
+1851240 1695683451.457340 read(3, "#!/usr/bin/env perl\n\nuse strict;"..., 8192) = 1061 <0.000004>
+1851240 1695683451.457385 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/strict.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000008>
+1851240 1695683451.457409 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/strict.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457426 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/strict.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457442 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/strict.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457458 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/strict.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457474 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/strict.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457490 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/strict.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457506 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/strict.pm", {st_mode=S_IFREG|0455, st_size=4738, ...}) = 0 <0.000004>
+1851240 1695683451.457524 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/strict.pm", O_RDONLY) = 4 <0.000006>
+1851240 1695683451.457543 ioctl(4, TCGETS, 0x7ffee46f5b40) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.457558 lseek(4, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.457580 read(4, "package strict;\n\n$strict::VERSIO"..., 8192) = 4738 <0.000005>
+1851240 1695683451.457789 lseek(4, 1605, SEEK_SET) = 1605 <0.000006>
+1851240 1695683451.457818 lseek(4, 0, SEEK_CUR) = 1605 <0.000004>
+1851240 1695683451.457838 close(4)      = 0 <0.000005>
+1851240 1695683451.457880 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/warnings.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000006>
+1851240 1695683451.457905 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/warnings.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457922 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/warnings.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457938 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/warnings.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.457954 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/warnings.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.457979 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/warnings.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000007>
+1851240 1695683451.458013 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/warnings.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.458036 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/warnings.pm", {st_mode=S_IFREG|0455, st_size=44358, ...}) = 0 <0.000007>
+1851240 1695683451.458065 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/warnings.pm", O_RDONLY) = 4 <0.000009>
+1851240 1695683451.458092 ioctl(4, TCGETS, 0x7ffee46f5b40) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.458109 lseek(4, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.458159 read(4, "# -*- buffer-read-only: t -*-\n# "..., 8192) = 8192 <0.000016>
+1851240 1695683451.458259 brk(0x19df000) = 0x19df000 <0.000005>
+1851240 1695683451.458379 read(4, "   'substr'\t\t\t\t=> \"\\x00\\x00\\x00\\"..., 8192) = 8192 <0.000005>
+1851240 1695683451.458517 read(4, "BIT\t\t\t\t=  132 ;\nour $BYTES\t\t\t\t= "..., 8192) = 8192 <0.000005>
+1851240 1695683451.458742 brk(0x1a00000) = 0x1a00000 <0.000007>
+1851240 1695683451.459035 lseek(4, 21559, SEEK_SET) = 21559 <0.000005>
+1851240 1695683451.459065 lseek(4, 0, SEEK_CUR) = 21559 <0.000004>
+1851240 1695683451.459082 close(4)      = 0 <0.000004>
+1851240 1695683451.459187 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/Time/HiRes.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000007>
+1851240 1695683451.459214 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/Time/HiRes.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.459231 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Time/HiRes.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000011>
+1851240 1695683451.459254 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Time/HiRes.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.459272 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Time/HiRes.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000006>
+1851240 1695683451.459290 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Time/HiRes.pm", {st_mode=S_IFREG|0455, st_size=23192, ...}) = 0 <0.000007>
+1851240 1695683451.459312 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Time/HiRes.pm", O_RDONLY) = 4 <0.000006>
+1851240 1695683451.459332 ioctl(4, TCGETS, 0x7ffee46f5b40) = -1 ENOTTY (Inappropriate ioctl for device) <0.000004>
+1851240 1695683451.459349 lseek(4, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.459368 read(4, "package Time::HiRes;\n\n{ use 5.00"..., 8192) = 8192 <0.000009>
+1851240 1695683451.459572 lseek(4, 2398, SEEK_SET) = 2398 <0.000004>
+1851240 1695683451.459592 lseek(4, 0, SEEK_CUR) = 2398 <0.000003>
+1851240 1695683451.459606 close(4)      = 0 <0.000004>
+1851240 1695683451.459629 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/Exporter.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.459652 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/Exporter.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000006>
+1851240 1695683451.459677 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Exporter.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.459698 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Exporter.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.459715 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Exporter.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.459731 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Exporter.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.459748 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/Exporter.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.459764 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/Exporter.pm", {st_mode=S_IFREG|0455, st_size=18746, ...}) = 0 <0.000004>
+1851240 1695683451.459782 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/Exporter.pm", O_RDONLY) = 4 <0.000006>
+1851240 1695683451.459801 ioctl(4, TCGETS, 0x7ffee46f5b40) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.459815 lseek(4, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.459837 read(4, "package Exporter;\n\nrequire 5.006"..., 8192) = 8192 <0.000005>
+1851240 1695683451.459914 brk(0x1a21000) = 0x1a21000 <0.000005>
+1851240 1695683451.460110 lseek(4, 2366, SEEK_SET) = 2366 <0.000006>
+1851240 1695683451.460137 lseek(4, 0, SEEK_CUR) = 2366 <0.000004>
+1851240 1695683451.460155 close(4)      = 0 <0.000004>
+1851240 1695683451.460183 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/DynaLoader.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000010>
+1851240 1695683451.460209 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/DynaLoader.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.460227 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/DynaLoader.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000007>
+1851240 1695683451.460246 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/DynaLoader.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.460264 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/DynaLoader.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000006>
+1851240 1695683451.460283 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/DynaLoader.pm", {st_mode=S_IFREG|0455, st_size=25202, ...}) = 0 <0.000007>
+1851240 1695683451.460304 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/DynaLoader.pm", O_RDONLY) = 4 <0.000005>
+1851240 1695683451.460323 ioctl(4, TCGETS, 0x7ffee46f5b40) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.460337 lseek(4, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.460355 read(4, "\n# Generated from DynaLoader_pm."..., 8192) = 8192 <0.000007>
+1851240 1695683451.460393 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/Config.pmc", 0x7ffee46f57c0) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.460412 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/Config.pm", 0x7ffee46f57c0) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460428 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Config.pmc", 0x7ffee46f57c0) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460444 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Config.pm", 0x7ffee46f57c0) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460460 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Config.pmc", 0x7ffee46f57c0) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460475 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Config.pm", {st_mode=S_IFREG|0455, st_size=3491, ...}) = 0 <0.000004>
+1851240 1695683451.460493 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Config.pm", O_RDONLY) = 5 <0.000005>
+1851240 1695683451.460511 ioctl(5, TCGETS, 0x7ffee46f55a0) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.460525 lseek(5, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.460548 read(5, "# This file was created by confi"..., 8192) = 3491 <0.000004>
+1851240 1695683451.460588 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/vars.pmc", 0x7ffee46f5220) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.460608 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/vars.pm", 0x7ffee46f5220) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460624 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/vars.pmc", 0x7ffee46f5220) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460640 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/vars.pm", 0x7ffee46f5220) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460659 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/vars.pmc", 0x7ffee46f5220) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460675 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/vars.pm", 0x7ffee46f5220) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460691 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/vars.pmc", 0x7ffee46f5220) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460706 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/vars.pm", {st_mode=S_IFREG|0455, st_size=2414, ...}) = 0 <0.000004>
+1851240 1695683451.460724 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/vars.pm", O_RDONLY) = 6 <0.000005>
+1851240 1695683451.460742 ioctl(6, TCGETS, 0x7ffee46f5000) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.460756 lseek(6, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.460777 read(6, "package vars;\n\nuse 5.006;\n\nour $"..., 8192) = 2414 <0.000004>
+1851240 1695683451.460823 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/warnings/register.pmc", 0x7ffee46f4c80) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.460843 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/warnings/register.pm", 0x7ffee46f4c80) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.460859 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/warnings/register.pmc", 0x7ffee46f4c80) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460881 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/warnings/register.pm", 0x7ffee46f4c80) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.460905 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/warnings/register.pmc", 0x7ffee46f4c80) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.460923 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/warnings/register.pm", 0x7ffee46f4c80) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.460938 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/warnings/register.pmc", 0x7ffee46f4c80) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.460955 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/warnings/register.pm", {st_mode=S_IFREG|0455, st_size=759, ...}) = 0 <0.000004>
+1851240 1695683451.460978 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/warnings/register.pm", O_RDONLY) = 7 <0.000006>
+1851240 1695683451.460998 ioctl(7, TCGETS, 0x7ffee46f4a60) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.461019 lseek(7, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.461041 read(7, "package warnings::register;\n\nour"..., 8192) = 759 <0.000004>
+1851240 1695683451.461061 brk(0x1a42000) = 0x1a42000 <0.000004>
+1851240 1695683451.461118 lseek(7, 487, SEEK_SET) = 487 <0.000004>
+1851240 1695683451.461138 lseek(7, 0, SEEK_CUR) = 487 <0.000004>
+1851240 1695683451.461157 close(7)      = 0 <0.000004>
+1851240 1695683451.461337 lseek(6, 1148, SEEK_SET) = 1148 <0.000004>
+1851240 1695683451.461357 lseek(6, 0, SEEK_CUR) = 1148 <0.000004>
+1851240 1695683451.461374 close(6)      = 0 <0.000004>
+1851240 1695683451.461555 read(5, "", 8192) = 0 <0.000005>
+1851240 1695683451.461576 close(5)      = 0 <0.000004>
+1851240 1695683451.461783 brk(0x1a64000) = 0x1a64000 <0.000005>
+1851240 1695683451.461950 read(4, " s/-l//;\n            push(@names"..., 8192) = 8192 <0.000005>
+1851240 1695683451.462110 lseek(4, 10460, SEEK_SET) = 10460 <0.000004>
+1851240 1695683451.462130 lseek(4, 0, SEEK_CUR) = 10460 <0.000004>
+1851240 1695683451.462159 close(4)      = 0 <0.000006>
+1851240 1695683451.462231 getuid()      = 1000 <0.000003>
+1851240 1695683451.462248 geteuid()     = 1000 <0.000003>
+1851240 1695683451.462265 getgid()      = 1002 <0.000003>
+1851240 1695683451.462278 getegid()     = 1002 <0.000003>
+1851240 1695683451.462309 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/auto/Time/HiRes", 0x7bf040) = -1 ENOENT (No such file or directory) <0.000014>
+1851240 1695683451.462342 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/auto/Time/HiRes", 0x7bf040) = -1 ENOENT (No such file or directory) <0.000007>
+1851240 1695683451.462362 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/auto/Time/HiRes", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0 <0.000005>
+1851240 1695683451.462382 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/auto/Time/HiRes/HiRes.so", {st_mode=S_IFREG|0555, st_size=31752, ...}) = 0 <0.000008>
+1851240 1695683451.462417 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/auto/Time/HiRes/HiRes.bs", 0x7bf040) = -1 ENOENT (No such file or directory) <0.000006>
+1851240 1695683451.462448 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/auto/Time/HiRes/HiRes.so", O_RDONLY|O_CLOEXEC) = 4 <0.000009>
+1851240 1695683451.462477 read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300\24\0\0\0\0\0\0"..., 832) = 832 <0.001814>
+1851240 1695683451.464315 newfstatat(4, "", {st_mode=S_IFREG|0555, st_size=31752, ...}, AT_EMPTY_PATH) = 0 <0.000004>
+1851240 1695683451.464340 mmap(NULL, 4219224, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcf15feb000 <0.000006>
+1851240 1695683451.464358 mmap(0x7fcf16000000, 2122072, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0) = 0x7fcf16000000 <0.000010>
+1851240 1695683451.464379 munmap(0x7fcf15feb000, 86016) = 0 <0.000004>
+1851240 1695683451.464393 munmap(0x7fcf16207000, 2007384) = 0 <0.000004>
+1851240 1695683451.464407 mprotect(0x7fcf16006000, 2093056, PROT_NONE) = 0 <0.000005>
+1851240 1695683451.464423 mmap(0x7fcf16205000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x5000) = 0x7fcf16205000 <0.000004>
+1851240 1695683451.464450 close(4)      = 0 <0.000003>
+1851240 1695683451.464468 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/librt.so.1", O_RDONLY|O_CLOEXEC) = 4 <0.000009>
+1851240 1695683451.464491 read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832 <0.000004>
+1851240 1695683451.464508 newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=14664, ...}, AT_EMPTY_PATH) = 0 <0.000003>
+1851240 1695683451.464525 mmap(NULL, 16440, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fcf163ed000 <0.000006>
+1851240 1695683451.464542 mmap(0x7fcf163ee000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x1000) = 0x7fcf163ee000 <0.000008>
+1851240 1695683451.464560 mmap(0x7fcf163ef000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x2000) = 0x7fcf163ef000 <0.000006>
+1851240 1695683451.464577 mmap(0x7fcf163f0000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x2000) = 0x7fcf163f0000 <0.000004>
+1851240 1695683451.464601 close(4)      = 0 <0.000003>
+1851240 1695683451.464622 mprotect(0x7fcf163f0000, 4096, PROT_READ) = 0 <0.000006>
+1851240 1695683451.464647 mprotect(0x7fcf16205000, 4096, PROT_READ) = 0 <0.000008>
+1851240 1695683451.464730 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/Exporter/Heavy.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000009>
+1851240 1695683451.464762 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/x86_64-linux/Exporter/Heavy.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.464783 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Exporter/Heavy.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.464800 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Exporter/Heavy.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000004>
+1851240 1695683451.464820 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Exporter/Heavy.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.464836 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/x86_64-linux/Exporter/Heavy.pm", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000003>
+1851240 1695683451.464852 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/Exporter/Heavy.pmc", 0x7ffee46f5d60) = -1 ENOENT (No such file or directory) <0.000005>
+1851240 1695683451.464868 stat("/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/Exporter/Heavy.pm", {st_mode=S_IFREG|0455, st_size=6551, ...}) = 0 <0.000004>
+1851240 1695683451.464887 openat(AT_FDCWD, "/opt/perlbrew/perl5/perlbrew/perls/perl-5.24.0/lib/5.24.0/Exporter/Heavy.pm", O_RDONLY) = 4 <0.000006>
+1851240 1695683451.464906 ioctl(4, TCGETS, 0x7ffee46f5b40) = -1 ENOTTY (Inappropriate ioctl for device) <0.000003>
+1851240 1695683451.464921 lseek(4, 0, SEEK_CUR) = 0 <0.000003>
+1851240 1695683451.464940 read(4, "package Exporter::Heavy;\n\nuse st"..., 8192) = 6551 <0.000005>
+1851240 1695683451.465225 brk(0x1a87000) = 0x1a87000 <0.000005>
+1851240 1695683451.465485 read(4, "", 8192) = 0 <0.000004>
+1851240 1695683451.465505 close(4)      = 0 <0.000004>
+1851240 1695683451.465577 read(3, "", 8192) = 0 <0.000005>
+1851240 1695683451.465596 close(3)      = 0 <0.000004>
+1851240 1695683451.465626 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=1000000}, NULL) = 0 <0.004621>
+1851240 1695683451.470276 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=2000000}, NULL) = 0 <0.010400>
+1851240 1695683451.480706 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=3000000}, NULL) = 0 <0.006840>
+1851240 1695683451.487586 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=4000000}, NULL) = 0 <0.004908>
+1851240 1695683451.492529 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=5000000}, NULL) = 0 <0.019913>
+1851240 1695683451.512491 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=6000000}, NULL) = 0 <0.018267>
+1851240 1695683451.530806 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=7000000}, NULL) = 0 <0.007198>
+1851240 1695683451.538058 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=8000000}, NULL) = 0 <0.008812>
+1851240 1695683451.546913 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=9000000}, NULL) = 0 <0.009359>
+1851240 1695683451.556331 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=10000000}, NULL) = 0 <0.024984>
+1851240 1695683451.581392 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=11000000}, NULL) = 0 <0.026252>
+1851240 1695683451.607722 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=12000000}, NULL) = 0 <0.015159>
+1851240 1695683451.622944 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=13000000}, NULL) = 0 <0.013057>
+1851240 1695683451.636050 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=14000000}, NULL) = 0 <0.017371>
+1851240 1695683451.653466 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=15000000}, NULL) = 0 <0.020861>
+1851240 1695683451.674384 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=16000000}, NULL) = 0 <0.027864>
+1851240 1695683451.702313 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=17000000}, NULL) = 0 <0.020897>
+1851240 1695683451.723283 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=18000000}, NULL) = 0 <0.018838>
+1851240 1695683451.742189 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=19000000}, NULL) = 0 <0.036823>
+1851240 1695683451.779094 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=20000000}, NULL) = 0 <0.020122>
+1851240 1695683451.799296 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=21000000}, NULL) = 0 <0.021196>
+1851240 1695683451.820554 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=22000000}, NULL) = 0 <0.022091>
+1851240 1695683451.842708 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=23000000}, NULL) = 0 <0.023153>
+1851240 1695683451.865923 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=24000000}, NULL) = 0 <0.026541>
+1851240 1695683451.892551 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=25000000}, NULL) = 0 <0.025241>
+1851240 1695683451.917864 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=26000000}, NULL) = 0 <0.026480>
+1851240 1695683451.944413 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=27000000}, NULL) = 0 <0.027448>
+1851240 1695683451.971926 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=28000000}, NULL) = 0 <0.047331>
+1851240 1695683452.019337 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=29000000}, NULL) = 0 <0.030779>
+1851240 1695683452.050215 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=30000000}, NULL) = 0 <0.031416>
+1851240 1695683452.081706 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=31000000}, NULL) = 0 <0.031280>
+1851240 1695683452.113057 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=32000000}, NULL) = 0 <0.032382>
+1851240 1695683452.145515 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=33000000}, NULL) = 0 <0.033241>
+1851240 1695683452.178838 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=34000000}, NULL) = 0 <0.034185>
+1851240 1695683452.213103 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=35000000}, NULL) = 0 <0.043591>
+1851240 1695683452.256789 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=36000000}, NULL) = 0 <0.036189>
+1851240 1695683452.293181 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=37000000}, NULL) = 0 <0.037222>
+1851240 1695683452.330488 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=38000000}, NULL) = 0 <0.038260>
+1851240 1695683452.368846 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=39000000}, NULL) = 0 <0.039256>
+1851240 1695683452.408271 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=40000000}, NULL) = 0 <0.042772>
+1851240 1695683452.451159 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=41000000}, NULL) = 0 <0.041159>
+1851240 1695683452.492419 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=42000000}, NULL) = 0 <0.042241>
+1851240 1695683452.534814 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=43000000}, NULL) = 0 <0.043277>
+1851240 1695683452.578277 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=44000000}, NULL) = 0 <0.044309>
+1851240 1695683452.622700 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=45000000}, NULL) = 0 <0.045131>
+1851240 1695683452.667916 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=46000000}, NULL) = 0 <0.046102>
+1851240 1695683452.714088 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=47000000}, NULL) = 0 <0.047027>
+1851240 1695683452.761194 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=48000000}, NULL) = 0 <0.049329>
+1851240 1695683452.810595 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=49000000}, NULL) = 0 <0.050373>
+1851240 1695683452.861048 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=50000000}, NULL) = 0 <0.050092>
+1851240 1695683452.911220 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=51000000}, NULL) = 0 <0.051084>
+1851240 1695683452.962374 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=52000000}, NULL) = 0 <0.052111>
+1851240 1695683453.014568 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=53000000}, NULL) = 0 <0.053123>
+1851240 1695683453.067768 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=54000000}, NULL) = 0 <0.054145>
+1851240 1695683453.121993 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=55000000}, NULL) = 0 <0.055218>
+1851240 1695683453.177285 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=56000000}, NULL) = 0 <0.056231>
+1851240 1695683453.233599 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=57000000}, NULL) = 0 <0.057091>
+1851240 1695683453.290766 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=58000000}, NULL) = 0 <0.067634>
+1851240 1695683453.358469 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=59000000}, NULL) = 0 <0.059107>
+1851240 1695683453.417647 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=60000000}, NULL) = 0 <0.060168>
+1851240 1695683453.477892 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=61000000}, NULL) = 0 <0.061119>
+1851240 1695683453.539097 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=62000000}, NULL) = 0 <0.062189>
+1851240 1695683453.601362 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=63000000}, NULL) = 0 <0.063039>
+1851240 1695683453.664470 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=64000000}, NULL) = 0 <0.064133>
+1851240 1695683453.728678 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=65000000}, NULL) = 0 <0.065107>
+1851240 1695683453.793861 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=66000000}, NULL) = 0 <0.067249>
+1851240 1695683453.861185 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=67000000}, NULL) = 0 <0.067105>
+1851240 1695683453.928363 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=68000000}, NULL) = 0 <0.068109>
+1851240 1695683453.996550 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=69000000}, NULL) = 0 <0.069089>
+1851240 1695683454.065720 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=70000000}, NULL) = 0 <0.070166>
+1851240 1695683454.135955 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=71000000}, NULL) = 0 <0.071157>
+1851240 1695683454.207210 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=72000000}, NULL) = 0 <0.072115>
+1851240 1695683454.279399 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=73000000}, NULL) = 0 <0.073542>
+1851240 1695683454.353023 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=74000000}, NULL) = 0 <0.074100>
+1851240 1695683454.427195 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=75000000}, NULL) = 0 <0.075142>
+1851240 1695683454.502410 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=76000000}, NULL) = 0 <0.078612>
+1851240 1695683454.581099 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=77000000}, NULL) = 0 <0.078067>
+1851240 1695683454.659240 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=78000000}, NULL) = 0 <0.078133>
+1851240 1695683454.737447 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=79000000}, NULL) = 0 <0.079126>
+1851240 1695683454.816664 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=80000000}, NULL) = 0 <0.080113>
+1851240 1695683454.896851 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=81000000}, NULL) = 0 <0.081172>
+1851240 1695683454.978110 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=82000000}, NULL) = 0 <0.082090>
+1851240 1695683455.060274 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=83000000}, NULL) = 0 <0.083233>
+1851240 1695683455.143581 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=84000000}, NULL) = 0 <0.084091>
+1851240 1695683455.227747 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=85000000}, NULL) = 0 <0.085114>
+1851240 1695683455.312940 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=86000000}, NULL) = 0 <0.086117>
+1851240 1695683455.399130 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=87000000}, NULL) = 0 <0.087095>
+1851240 1695683455.486298 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=88000000}, NULL) = 0 <0.088097>
+1851240 1695683455.574466 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=89000000}, NULL) = 0 <0.092324>
+1851240 1695683455.666857 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=90000000}, NULL) = 0 <0.091431>
+1851240 1695683455.758357 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=91000000}, NULL) = 0 <0.096080>
+1851240 1695683455.854509 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=92000000}, NULL) = 0 <0.094487>
+1851240 1695683455.949078 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=93000000}, NULL) = 0 <0.093161>
+1851240 1695683456.042313 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=94000000}, NULL) = 0 <0.094102>
+1851240 1695683456.136494 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=95000000}, NULL) = 0 <0.095911>
+1851240 1695683456.232484 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=96000000}, NULL) = 0 <0.096135>
+1851240 1695683456.328711 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=97000000}, NULL) = 0 <0.097133>
+1851240 1695683456.425940 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=98000000}, NULL) = 0 <0.098090>
+1851240 1695683456.524115 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=99000000}, NULL) = 0 <0.100500>
+1851240 1695683456.624687 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=100000000}, NULL) = 0 <0.100204>
+1851240 1695683456.724980 rt_sigaction(SIGHUP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000004>
+1851240 1695683456.725036 rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725051 rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725066 rt_sigaction(SIGILL, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725091 rt_sigaction(SIGTRAP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725106 rt_sigaction(SIGABRT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725121 rt_sigaction(SIGBUS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725136 rt_sigaction(SIGFPE, NULL, {sa_handler=SIG_IGN, sa_mask=[FPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fcf169a9520}, 8) = 0 <0.000003>
+1851240 1695683456.725151 rt_sigaction(SIGKILL, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725166 rt_sigaction(SIGUSR1, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725180 rt_sigaction(SIGSEGV, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725195 rt_sigaction(SIGUSR2, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725210 rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725224 rt_sigaction(SIGALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725239 rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725254 rt_sigaction(SIGSTKFLT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725268 rt_sigaction(SIGCHLD, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725283 rt_sigaction(SIGCONT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725297 rt_sigaction(SIGSTOP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725312 rt_sigaction(SIGTSTP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725327 rt_sigaction(SIGTTIN, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725341 rt_sigaction(SIGTTOU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725356 rt_sigaction(SIGURG, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725371 rt_sigaction(SIGXCPU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725386 rt_sigaction(SIGXFSZ, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725400 rt_sigaction(SIGVTALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725415 rt_sigaction(SIGPROF, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725430 rt_sigaction(SIGWINCH, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725444 rt_sigaction(SIGIO, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725459 rt_sigaction(SIGPWR, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725474 rt_sigaction(SIGSYS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725489 rt_sigaction(SIGRT_2, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725518 rt_sigaction(SIGRT_3, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725533 rt_sigaction(SIGRT_4, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725548 rt_sigaction(SIGRT_5, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725563 rt_sigaction(SIGRT_6, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725577 rt_sigaction(SIGRT_7, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725592 rt_sigaction(SIGRT_8, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725607 rt_sigaction(SIGRT_9, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725621 rt_sigaction(SIGRT_10, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725636 rt_sigaction(SIGRT_11, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725651 rt_sigaction(SIGRT_12, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725666 rt_sigaction(SIGRT_13, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725680 rt_sigaction(SIGRT_14, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725695 rt_sigaction(SIGRT_15, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725710 rt_sigaction(SIGRT_16, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725724 rt_sigaction(SIGRT_17, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725739 rt_sigaction(SIGRT_18, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725754 rt_sigaction(SIGRT_19, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725769 rt_sigaction(SIGRT_20, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725784 rt_sigaction(SIGRT_21, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725798 rt_sigaction(SIGRT_22, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725814 rt_sigaction(SIGRT_23, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725828 rt_sigaction(SIGRT_24, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725843 rt_sigaction(SIGRT_25, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725858 rt_sigaction(SIGRT_26, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725872 rt_sigaction(SIGRT_27, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725887 rt_sigaction(SIGRT_28, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725902 rt_sigaction(SIGRT_29, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725916 rt_sigaction(SIGRT_30, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725931 rt_sigaction(SIGRT_31, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725946 rt_sigaction(SIGRT_32, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725961 rt_sigaction(SIGABRT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.725984 rt_sigaction(SIGCHLD, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.726001 rt_sigaction(SIGIO, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.726015 rt_sigaction(SIGSYS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000003>
+1851240 1695683456.726130 exit_group(0) = ?
+1851240 1695683456.726393 +++ exited with 0 +++
