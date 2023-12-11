@@ -1,7 +1,15 @@
-# blogging
-This repo to be used for scripts and files referred to in Pythian Blogs
+# Oracle OPatch Update Automation
 
-Create a separate branch for each blog article
+File for the blog [Automating Oracle OPatch Updates](URL here when it is known)
 
-Do not merge branches
+
+Note to blog author: Do not merge branch to main! Delete this line after reading.
+
+
+## File 1
+
+## File 2
+
+
+
 
