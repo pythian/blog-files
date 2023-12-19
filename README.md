@@ -10,7 +10,7 @@ The following demo was created on an Oracle 19.12 database.
 
 The client is Linux. Some of these scripts may require adjustments for the differences in how lines are terminate if the scripts are run on Windows.
 
-These tables and views are rather contrived, and do not fit any good design pattern. They are simply for demonstration o f 
+Several of the tables and views used in this article are rather contrived, and do not fit any good design pattern. They are simply for demonstration purposes.
 
 ## dbms_utility.expand_sql_text
 
@@ -20,58 +20,40 @@ The `DBMS_UTILITY` package has a procedure `EXPAND_SQL_TEXT`. As per the documen
 
 I will use `dbms_utility.expand_sql_text` to expand some simple SQL statements into the full SQL that is used by Oracle.
 
+The scripts used in this blog may be found at [oracle-dbms-utility-expand-sql](https://github.com/pythian/blog-files/tree/oracle-dbms-utility-expand-sql)
 
 ## create-tables.sql
 
-This script just reads the `ALL_OBJECTS` view to create several smaller test tables.
+This script just selects from the `ALL_OBJECTS` view to create several smaller test tables.
+
+The test tables each contain some part of the columns found in the `ALL_OBJECTS` view, and together make up a subset of that view.
+
+These are the 'contrived' tables referred to previously.
 
 ```text
 @@ create-tables
 
 Table dropped.
-
-
 Table dropped.
-
-
-Table dropped.
-
-
-Table dropped.
-
-
-Table dropped.
-
-
-Table dropped.
-
-
-Commit complete.
+...
 
 TEST_OBJECTS
-
 Table created.
 
 XP_OBJECT_ID
-
 Table created.
 
 XP_OBJECT_NAMES
-
 Table created.
 
 XP_OBJECT_DATES
-
 Table created.
 
 XP_OBJECT_TYPES
-
 Table created.
 
 XP_OBJECT_STATUS
-
 Table created.
-
 
 Commit complete.
 ```
@@ -80,53 +62,46 @@ Commit complete.
 
 Now create some views on the new tables, as well as some views on views.
 
+Each of the tables has a view `select * from TABLE_NAME`.  The other views JOIN these views.
 
 ```text
 @@ create-views
 XP_OBJECT_ID_V
-
 View created.
 
 XP_OBJECT_DATES_V
-
 View created.
 
 XP_OBJECT_NAMES_V
-
 View created.
 
 XP_OBJECT_TYPES_V
-
 View created.
 
 XP_OBJECT_STATUS_V
-
 View created.
 
 XP_OBJECT_ID_TYPE_V
-
 View created.
 
 XP_OBJECT_ID_NAME_V
-
 View created.
 
 XP_OBJECT_ID_STATUS_V
-
 View created.
 
 XP_OBJECT_ID_DATES_V
-
 View created.
 
 XP_OBJECTS_V
-
 View created.
 ```
 
 ## permissions
 
-It would be best to run these script as an account that has DBA privileges, otherwise it may fail.
+The simplest way to run these scripts is from an account that has DBA privileges, otherwise it may fail.
+
+While I could go ferret out the necessary privileges, that is not the focus of this article, and so determining the exact privileges required is left as an exercise for the reader.
 
 From OH/rdbms/admin/dbmsutil.sql
 
@@ -178,14 +153,14 @@ SELECT "A1"."OWNER" "OWNER","A1"."OBJECT_ID" "OBJECT_ID","A1"."OBJECT_TYPE" "OBJ
 
 OK, that is rather difficult to read.
 
-From now on the script `get-view.sh` will be used, which logs in to database, gets the expanded sql text and runs it through a formatter.
+From now on the Shell script `get-view.sh` will be used, which logs in to database, gets the expanded sql text and runs it through a formatter.
 
 Note: you will need to change the credentials in the script if you run this yourself.
 
 Let's try it:
 
 ```text
-$  ./get-view.sh  'select * from XP_OBJECT_ID_TYPE_V' | expand -t3
+$  ./get-view.sh  'select * from XP_OBJECT_ID_TYPE_V'
 
 SELECT
    A1.OWNER OWNER
@@ -227,7 +202,9 @@ FROM
 
 That is much easier to read.
 
-When 1+ objects (including tables, not just views) are referenced in the SQL, Oracle creates unique column names for each referenced column:
+The formatter `format-sql.pl` is not a full functioned formatter, but it does work for the scripts in this blog.
+
+When 1+ objects (including tables, not just views) are referenced in the SQL, Oracle may creates unique column names for a number of referenced columns:
 
 For example:
 
@@ -282,12 +259,125 @@ Why would Oracle do that? Consider the following SQL snippet from the previous o
 
 The column OBJECT_NAME appears twice, in each of the A3 and A4 inline views.  The unique names are used to disambiguate the column names.
 
-## The Full SQL Text
+There appears to be some threshold at which Oracle decides to create aliases for all column names, rather than just those that require it.
 
-There is one view that joins all other views: XP_OBJECTS_V.  Let's see what the expanded SQL looks like:
+The following SQL is a query on two of the tables in the OE Order Entry schema that is included with [Oracle Demos](https://github.com/oracle-samples/db-sample-schemas)
+
+```sql
+create or replace view expand_sql_test
+as
+select o.order_id, o.order_date,o.customer_id
+        , i.line_item_id, i.product_id
+from oe.orders o
+join oe.order_items i on i.order_id = o.order_id
+order by o.order_id, i.line_item_id
+```
+
+The expanded view:
 
 ```text
-$  ./get-view.sh "select * from xp_objects_v"  | expand -t3
+$  ./get-view.sh 'select * from oe.expand_sql_test
+
+SELECT
+   A1.ORDER_ID ORDER_ID
+   ,A1.ORDER_DATE ORDER_DATE
+   ,A1.CUSTOMER_ID CUSTOMER_ID
+   ,A1.LINE_ITEM_ID LINE_ITEM_ID
+   ,A1.PRODUCT_ID PRODUCT_ID
+FROM
+(
+   SELECT
+      A2.QCSJ_C000000000400000_0 ORDER_ID
+      ,A2.ORDER_DATE_1 ORDER_DATE
+      ,A2.CUSTOMER_ID_2 CUSTOMER_ID
+      ,A2.LINE_ITEM_ID_4 LINE_ITEM_ID
+      ,A2.PRODUCT_ID_5 PRODUCT_ID
+   FROM
+   (
+      SELECT
+         A4.ORDER_ID QCSJ_C000000000400000_0
+         ,A4.ORDER_DATE ORDER_DATE_1
+         ,A4.CUSTOMER_ID CUSTOMER_ID_2
+         ,A3.ORDER_ID QCSJ_C000000000400001
+         ,A3.LINE_ITEM_ID LINE_ITEM_ID_4
+         ,A3.PRODUCT_ID PRODUCT_ID_5
+      FROM OE.ORDERS A4,OE.ORDER_ITEMS A3 WHERE A3.ORDER_ID=A4.ORDER_ID
+   ) A2
+
+   ORDER
+   BY
+   A2.QCSJ_C000000000400000_0,A2.LINE_ITEM_ID_4
+) A1
+```
+
+The only duplicate column name in this case was ORDER_ID.
+
+This is also the only column that `dbms_utility.expand_sqltext` created an alias for.
+
+If a copy is made of the ORDER_ITEMS table, and the ORDER_ID column is renamed, `dbms_utility.expand_sqltext` will not create an alias for any columns.
+
+```sql
+
+create table order_items_test
+as
+select * from order_items
+/
+
+alter table order_items_test rename column order_id to items_order_id ;
+
+create or replace view expand_sql_test_2
+as
+select o.order_id, o.order_date,o.customer_id
+        , i.line_item_id, i.product_id
+from oe.orders o
+join oe.order_items_test i on i.items_order_id = o.order_id
+order by o.order_id, i.line_item_id
+/
+```
+
+Expand the SQL Text
+
+```text
+$  ./get-view.sh 'select * from oe.expand_sql_test_2'
+
+SELECT
+   A1.ORDER_ID ORDER_ID
+   ,A1.ORDER_DATE ORDER_DATE
+   ,A1.CUSTOMER_ID CUSTOMER_ID
+   ,A1.LINE_ITEM_ID LINE_ITEM_ID
+   ,A1.PRODUCT_ID PRODUCT_ID
+FROM
+(
+   SELECT
+      A2.ORDER_ID_0 ORDER_ID
+      ,A2.ORDER_DATE_1 ORDER_DATE
+      ,A2.CUSTOMER_ID_2 CUSTOMER_ID
+      ,A2.LINE_ITEM_ID_4 LINE_ITEM_ID
+      ,A2.PRODUCT_ID_5 PRODUCT_ID
+   FROM
+   (
+      SELECT
+         A4.ORDER_ID ORDER_ID_0
+         ,A4.ORDER_DATE ORDER_DATE_1
+         ,A4.CUSTOMER_ID CUSTOMER_ID_2
+         ,A3.ITEMS_ORDER_ID ITEMS_ORDER_ID
+         ,A3.LINE_ITEM_ID LINE_ITEM_ID_4
+         ,A3.PRODUCT_ID PRODUCT_ID_5
+      FROM OE.ORDERS A4,OE.ORDER_ITEMS_TEST A3 WHERE A3.ITEMS_ORDER_ID=A4.ORDER_ID
+   ) A2
+
+   ORDER
+   BY
+   A2.ORDER_ID_0,A2.LINE_ITEM_ID_4
+) A1
+```
+
+## The Full SQL Text
+
+Getting back now to the original test tables and views, there is one view that joins all other views: XP_OBJECTS_V.  Let's see what the expanded SQL looks like:
+
+```text
+$  ./get-view.sh "select * from xp_objects_v" 
 
 SELECT
    A1.OWNER OWNER
@@ -488,10 +578,77 @@ FROM
 
 That simple SELECT statement expanded into 196 lines of SQL!
 
-Imagine that you have been given the task of improving the performance of `select * from xp_objects_v`.
+You may have also noticed that nearly all of the columns referenced in the inline views have been aliased to a different name. 
+
+Now imagine that you have been given the task of improving the performance of `select * from xp_objects_v`.
 
 On the surface, it looks simple. But when you start digging in to it, say by getting an execution plan or a SQL trace, you realize the SQL is much more complex than it first appeared.
 
-The `dbms_utility.expand_sql_text` procedure can help you get a better grasp of the full SQL statement that is being executed.
+For example, this query: `select /*+ gather_plan_statistics */ count(*) from xp_objects_v where owner = 'SCOTT'`,  has the following execution plan:
+
+```text
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                 | Name             | Starts | E-Rows |E-Bytes| Cost (%CPU)| E-Time   | A-Rows |   A-Time   | Buffers |  OMem |  1Mem | Used-Mem |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT          |                  |      1 |        |       |   571 (100)|          |      1 |00:00:00.01 |    1957 |       |       |          |
+|   1 |  SORT AGGREGATE           |                  |      1 |      1 |    45 |            |          |      1 |00:00:00.01 |    1957 |       |       |          |
+|*  2 |   HASH JOIN               |                  |      1 |     10 |   450 |   571   (1)| 00:00:01 |     10 |00:00:00.01 |    1957 |  2278K|  2278K| 1095K (0)|
+|*  3 |    HASH JOIN              |                  |      1 |     10 |   400 |   437   (2)| 00:00:01 |     10 |00:00:00.01 |    1483 |  2278K|  2278K| 1066K (0)|
+|*  4 |     HASH JOIN             |                  |      1 |     10 |   350 |   394   (2)| 00:00:01 |     10 |00:00:00.01 |    1344 |  1797K|  1797K| 1324K (0)|
+|*  5 |      HASH JOIN            |                  |      1 |     10 |   300 |   326   (1)| 00:00:01 |     10 |00:00:00.01 |    1112 |  2278K|  2278K| 1366K (0)|
+|*  6 |       HASH JOIN           |                  |      1 |     10 |   250 |   284   (2)| 00:00:01 |     10 |00:00:00.01 |     973 |  1797K|  1797K| 1392K (0)|
+|*  7 |        HASH JOIN          |                  |      1 |     10 |   200 |   151   (2)| 00:00:01 |     10 |00:00:00.01 |     504 |  2278K|  2278K| 1368K (0)|
+|*  8 |         HASH JOIN         |                  |      1 |     10 |   150 |   108   (1)| 00:00:01 |     10 |00:00:00.01 |     365 |  2278K|  2278K| 1368K (0)|
+|*  9 |          TABLE ACCESS FULL| XP_OBJECT_ID     |      1 |     10 |   100 |    42   (0)| 00:00:01 |     10 |00:00:00.01 |     139 |       |       |          |
+|  10 |          TABLE ACCESS FULL| XP_OBJECT_TYPES  |      1 |  66902 |   326K|    65   (0)| 00:00:01 |  66902 |00:00:00.01 |     226 |       |       |          |
+|  11 |         TABLE ACCESS FULL | XP_OBJECT_ID     |      1 |  66902 |   326K|    42   (0)| 00:00:01 |  66902 |00:00:00.01 |     139 |       |       |          |
+|  12 |        TABLE ACCESS FULL  | XP_OBJECT_NAMES  |      1 |  66902 |   326K|   133   (1)| 00:00:01 |  66902 |00:00:00.01 |     469 |       |       |          |
+|  13 |       TABLE ACCESS FULL   | XP_OBJECT_ID     |      1 |  66902 |   326K|    42   (0)| 00:00:01 |  66902 |00:00:00.01 |     139 |       |       |          |
+|  14 |      TABLE ACCESS FULL    | XP_OBJECT_STATUS |      1 |  66902 |   326K|    67   (0)| 00:00:01 |  66902 |00:00:00.01 |     232 |       |       |          |
+|  15 |     TABLE ACCESS FULL     | XP_OBJECT_ID     |      1 |  66902 |   326K|    42   (0)| 00:00:01 |  66902 |00:00:00.01 |     139 |       |       |          |
+|  16 |    TABLE ACCESS FULL      | XP_OBJECT_DATES  |      1 |  66902 |   326K|   135   (1)| 00:00:01 |  66902 |00:00:00.01 |     474 |       |       |          |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+```
+
+A 'TABLE ACCESS FULL' on each table in the view is not going to provide optimal performance for this query.
+
+It is also quite obvious that this is a view. Checking on the view definition, the follow SQL is shown:
+
+```sql
+  1  select  text
+  2  from all_views
+  3* where view_name like 'XP_OBJECTS_V'
+/
+
+TEXT
+--------------------------------------------------------------------------------
+select
+        t.owner
+        , t.object_id
+        , t.object_type
+        , n.object_name
+        , s.status
+        , d.created
+        , d.last_ddl_time
+from  xp_object_id_type_v t
+join xp_object_id_name_v n on n.object_id = t.object_id
+join xp_object_id_status_v s on s.object_id = t.object_id
+join xp_object_id_dates_v d on d.object_id = t.object_id
+
+
+1 row selected.
+```
+
+As you now know, that SQL does not tell the whole story, as the full SQL query is 196 lines of SQL.
+
+While the columns aliases created by `dbms_utility.expand_sql_text` may make the SQL somewhat difficult to read, that inconvenience is offset by the knowledge gained about the true nature of what at first appeared to be a simple SQL statement.  
+
+The expanded SQL will help you better understand the SQL execution plan, as almost nothing in the plan will correlate to `select * from xp_objects_v`;
+
+The expanded SQL can also be executed directly from SQL*Plus.  Having the full SQL does simplify the tuning effort somewhat.
+
+The next time you need to work on tuning the peformance of a view, give `dbms_utility.expand_sql_text` a try to see what you are really working with.
+
+
 
 

@@ -83,12 +83,12 @@ my $parenIndent='';
 
 foreach my $part ( @parts ) {
 
+
 	if ( grep(/^\s*\)\s*$/,$part) ) {
 		$closingParen = 1;
 		$parenIndent = substr($part,0,index($part,')'));
 		next;
 	}
-
 
 	if (grep(/^\s*SELECT/,$part) ) {
 		my $indent = substr($part,0,index($part,'SELECT'));
@@ -104,11 +104,21 @@ foreach my $part ( @parts ) {
 	}
 
 	if ($closingParen) {
-		$part =~ s/\s//g;
-		print "${parenIndent}) $part\n";
+		$part =~ s/^\s+//;
+		my @localParts = split(/\s+/,$part);
+		my $subPart = $localParts[0];
+		shift @localParts;
+		print "${parenIndent}) " . $subPart . " \n";
+		print "${parenIndent}";
+		foreach my $subPart (@localParts) {
+			print "\n${parenIndent}$subPart ";
+		} 
+		print "\n";
+		
 		$closingParen = 0;
 		next;
 	}
+
 	print "$part\n";
 }
 
