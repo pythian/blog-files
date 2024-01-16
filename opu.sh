@@ -1,18 +1,24 @@
 #!/bin/bash
 ############################################################
 #
-# OPatch Update v0.1
+# OPatch Update v1.1
 #
 # Autor:                Odair Brun
 # Date:                 11/04/2023
 # Description:  Purpose of this script is to automate
-#               the process to upgrade the OPatch utility.
+#                               the process to upgrade the OPatch utility.
+#
+# Updates:
+#
+#       01-15-2024 Replace curl option --netrc-file option to --user
 #
 #############################################################
 
+version="v1.1"
+
 # Function to display usage information
 display_usage() {
-  echo "OPatch Update version 1.0"
+  echo "OPatch Update version ${version}"
   echo
   echo "Usage: $0 [-h][-o <ORACLE_HOME>]"
   echo "Options:"
@@ -61,7 +67,7 @@ if [ "$opatch_owner" != "$current_user" ]; then
   exit 1
 fi
 
-echo "OPatch Update v0.1"
+echo "OPatch Update ${version}"
 date
 echo
 echo "[INFO] ORACLE_HOME=$ORACLE_HOME"
@@ -98,12 +104,14 @@ plat_lang=$(cat $SCRIPT_DIR/opatch_lsinv.out |grep "ARU platform id:" | awk '{pr
 plat_lang="${plat_lang}P"
 url_search="https://updates.oracle.com/Orion/SimpleSearch/process_form?search_type=patch&patch_number=${OPATCHID}&plat_lang=$plat_lang"
 
-# search for new version
-curl -sS -L --location-trusted "$url_search" -o $SCRIPT_DIR/search.out --netrc-file $SCRIPT_DIR/.netrc --cookie-jar $SCRIPT_DIR/.cookie
+user=`cat $SCRIPT_DIR/.netrc|grep login | awk '{print $NF}'`
+password=`cat $SCRIPT_DIR/.netrc|grep password | awk '{print $NF}'`
 
-if [ $? -eq 0 ] || [ "$(grep -q '<TITLE>Error' "$SCRIPT_DIR/search.out")" ] || [ "$(wc -c < "$SCRIPT_DIR/search.out")" -lt 5000 ]; then
+# search for new version
+curl -sS -L --location-trusted "$url_search" -o $SCRIPT_DIR/search.out --user ${user}:${password} --cookie-jar $SCRIPT_DIR/.cookie
+
+if [ $? -ne 0 ] || [ "$(grep -q '<TITLE>Error' "$SCRIPT_DIR/search.out")" ] || [ "$(wc -c < "$SCRIPT_DIR/search.out")" -lt 5000 ]; then
   # search not succeeded
-  cat $SCRIPT_DIR/search.out |grep Error
   echo "[ERROR] Search at MOS failed!"
   exit 1
 fi
@@ -127,7 +135,8 @@ fi
 # download new version
 url_download=`cat $SCRIPT_DIR/search.out |grep https| grep $OPATCHID| grep "${ORACLE_RELEASE//./}" | sed -e "s/^.*\href[^\"]*\"//g;s/\".*$//g;s/&$//g"`
 FILE_OUTPUT=`echo $url_download | awk -F '=' '{print $NF}'`
-curl -sS -L --location-trusted "$url_download" -o $SCRIPT_DIR/$FILE_OUTPUT --netrc-file $SCRIPT_DIR/.netrc --cookie-jar $SCRIPT_DIR/.cookie
+
+curl -sS -L --location-trusted "$url_download" -o $SCRIPT_DIR/$FILE_OUTPUT --user ${user}:${password} --cookie-jar $SCRIPT_DIR/.cookie
 
 if [ $? -eq 0 ]; then
   # download was successull
@@ -209,3 +218,4 @@ else
 fi
 
 exit 0
+
